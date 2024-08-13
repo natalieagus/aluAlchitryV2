@@ -1,0 +1,17 @@
+module sevenSegAlu (
+    input char[3],
+    output segs[7]
+) {
+    
+    always {
+        case (char) {
+            // G, F, E, D, C, B, A
+            0: segs = 7b1110111 // STORE_A
+            1: segs = 7b1111100 // STORE_B
+            2: segs = 7b1010100 // STORE_ALUFN
+            3: segs = 7b0111001 // COMPUTE
+            4: segs = 7b1011110 // DISPLAY
+            default: segs = 7b0000000
+        }
+    }
+}

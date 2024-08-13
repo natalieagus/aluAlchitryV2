@@ -1,0 +1,45 @@
+module shifter (
+    input a[32],
+    input b[5],
+    input alufnSignal[6],
+    output shift[32]
+  ) {
+
+    leftShifter leftShifter;
+    bitReverse bitReverse32In(#SIZE(32));
+    bitReverse bitReverse32Out(#SIZE(32));
+    mux2 chooseReverse[32];
+    mux2 chooseLeftRight[32];
+    sig arith;
+    
+  always {
+    
+    bitReverse32In.in = a;
+    chooseReverse.s0 = 32x{alufnSignal[0]};
+    chooseLeftRight.s0 = 32x{alufnSignal[0]};
+    
+    repeat(i, 32){
+        chooseReverse.in[i] = c{bitReverse32In.reversed[i], a[i]}; 
+    }
+    
+    arith = 0;
+    if (alufnSignal[1]){
+       arith = 1; 
+    }
+    
+    // left shifter 
+    leftShifter.b = b;
+    leftShifter.a = chooseReverse.out;
+    leftShifter.pad = arith;
+    
+    bitReverse32Out.in = leftShifter.shl;
+    
+        repeat(j, 32){
+            chooseLeftRight.in[j] = c{bitReverse32Out.reversed[j], leftShifter.shl[j]};
+        }
+    
+    
+    shift = chooseLeftRight.out;
+      
+  }
+}

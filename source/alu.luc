@@ -1,0 +1,59 @@
+module alu (
+    input a[32],
+    input b[32],
+    input alufnSignal[6],
+    output out[32],
+    output z,
+    output v,
+    output n
+  ) {
+  adder adder(#SIZE(32));
+  boolean boolean;
+  shifter shifter;
+  compare compare; 
+  multiplier multiplier;
+  
+  sig arith[32];
+  
+  always {
+    adder.a = a;
+    adder.b = b;
+    adder.alufnSignal = alufnSignal;
+    
+    multiplier.a = a;
+    multiplier.b = b;
+    
+    boolean.a = a;
+    boolean.b = b;
+    boolean.alufnSignal = alufnSignal;
+    
+    shifter.a = a;
+    shifter.b = b[4:0];
+    shifter.alufnSignal = alufnSignal;
+    
+    compare.z = adder.z;
+    compare.v = adder.v;
+    compare.n = adder.n;
+    
+    z = adder.z;
+    v = adder.v;
+    n = adder.n;
+    
+    compare.alufnSignal = alufnSignal;
+    
+    arith = adder.out;
+    if (alufnSignal[1]){
+        arith = multiplier.mul;
+    }
+    
+    case (alufnSignal[5:4]){
+      b00: out = arith;
+      b01: out = boolean.bool;
+      b10: out = shifter.shift;
+      b11: out = c{31x{b0}, compare.cmp};
+      default:
+        out = 32b0;
+    }
+    
+  }
+}

@@ -1,0 +1,38 @@
+module leftShifter (
+    input a[32],
+    input b[5],
+    input pad, 
+    output shl[32]
+  ) {
+
+  xBitLeftShifter shifter16(#SHIFT(16));
+  xBitLeftShifter shifter8(#SHIFT(8));
+  xBitLeftShifter shifter4(#SHIFT(4));
+  xBitLeftShifter shifter2(#SHIFT(2));
+  xBitLeftShifter shifter1(#SHIFT(1));
+ 
+  always {
+    shifter16.pad = pad;
+    shifter8.pad = pad;
+    shifter4.pad = pad;
+    shifter2.pad = pad;
+    shifter1.pad = pad;
+    
+    shifter16.a = a;
+    shifter16.doShift = b[4];
+    
+    shifter8.a = shifter16.out;
+    shifter8.doShift = b[3];
+    
+    shifter4.a = shifter8.out;
+    shifter4.doShift = b[2];
+    
+    shifter2.a = shifter4.out;
+    shifter2.doShift = b[1];
+    
+    shifter1.a = shifter2.out;
+    shifter1.doShift = b[0];
+    
+    shl = shifter1.out;
+  }
+}
