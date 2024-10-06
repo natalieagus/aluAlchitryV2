@@ -3,7 +3,7 @@ module adder #(
 )(
     input a[SIZE],
     input b[SIZE],
-    input alufnSignal[6],
+    input alufn_signal[6],
     output out[SIZE],
     output z,
     output v,
@@ -15,10 +15,10 @@ module adder #(
 
   always {
     
-    xb[SIZE-1:0] = b ^ SIZEx{alufnSignal[0]};
+    xb[SIZE-1:0] = b ^ SIZEx{alufn_signal[0]};
     rca.a = a;
     rca.b = xb;
-    rca.cin = alufnSignal[0];
+    rca.cin = alufn_signal[0];
 
     
     out = rca.s;

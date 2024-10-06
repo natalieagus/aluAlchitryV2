@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log MI_alchitryTop.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MI_alchitryTop.tcl" );
+         "-log alchitry_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source alchitry_top.tcl" );
 
 
 

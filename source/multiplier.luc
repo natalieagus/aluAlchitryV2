@@ -6,8 +6,8 @@ module multiplier (
     
     // simulation won't run with 496 for 32 bits
     fa fa[496]
-    sig currentRowFaIndex[$clog2(496)]
-    sig previousRowFaIndex[$clog2(496)]
+    sig current_row_fa_index[$clog2(496)]
+    sig previous_row_fa_index[$clog2(496)]
     
     
     always {
@@ -27,26 +27,26 @@ module multiplier (
             }
         }
         
-        previousRowFaIndex = 0
-        currentRowFaIndex = 31 // was 31
+        previous_row_fa_index = 0
+        current_row_fa_index = 31 // was 31
         
         // bit 1 out
-        mul[1] = fa.s[previousRowFaIndex]
+        mul[1] = fa.s[previous_row_fa_index]
         
         repeat (i, 29, 2){ // third row, stop at second last row (row 30), was 29
             repeat (j, 32-i){ // column, was 32-i
-                fa.a[currentRowFaIndex+j] = a[j] & b[i]
-                fa.b[currentRowFaIndex+j] = fa.s[previousRowFaIndex+1+j]
+                fa.a[current_row_fa_index+j] = a[j] & b[i]
+                fa.b[current_row_fa_index+j] = fa.s[previous_row_fa_index+1+j]
                 if (j == 0){ // set the first fa ci in the row to be 0
-                    fa.cin[currentRowFaIndex+j] = b0
+                    fa.cin[current_row_fa_index+j] = b0
                 }
                 else{
-                    fa.cin[currentRowFaIndex+j] = fa.cout[currentRowFaIndex+j-1]
+                    fa.cin[current_row_fa_index+j] = fa.cout[current_row_fa_index+j-1]
                 }
             } 
-            previousRowFaIndex = currentRowFaIndex
-            currentRowFaIndex = currentRowFaIndex + 32-i 
-            mul[i] = fa.s[previousRowFaIndex]
+            previous_row_fa_index = current_row_fa_index
+            current_row_fa_index = current_row_fa_index + 32-i 
+            mul[i] = fa.s[previous_row_fa_index]
         }
         
         // MSB out, this can be combined with the for-loop above

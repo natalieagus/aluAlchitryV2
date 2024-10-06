@@ -3,7 +3,7 @@ module boolean #(
 )(
     input a[SIZE],
     input b[SIZE],
-    input alufnSignal[6],
+    input alufn_signal[6],
     output bool[SIZE]
   ) {
   
@@ -12,7 +12,7 @@ module boolean #(
   always {
     mux_4_SIZE.s0 = a;
     mux_4_SIZE.s1= b;
-    mux_4_SIZE.in = SIZEx{{alufnSignal[3:0]}};
+    mux_4_SIZE.in = SIZEx{{alufn_signal[3:0]}};
     bool = mux_4_SIZE.out;
    
   }

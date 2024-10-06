@@ -1,0 +1,96 @@
+module alu_manual_tester#(
+    CLK_FREQ ~ 1000 : CLK_FREQ > 0) 
+(
+    input clk,  // clock
+    input rst,  // reset
+    input io_button[5],
+    input io_dip[3][8],
+    output io_led[3][8],
+    output io_segment[8],
+    output io_select[4]
+) {
+    
+    alu alu
+    dff dff_a[16](#INIT(0), .clk(clk), .rst(rst))
+    dff dff_b[16](#INIT(0),.clk(clk), .rst(rst))
+    dff dff_alufn[6](#INIT(0), .clk(clk), .rst(rst))
+    dff indicator_state[2](#INIT(b11),.clk(clk), .rst(rst))
+    dff output_alu[19](#INIT(0),.clk(clk), .rst(rst))
+    enum States {STORE_A, STORE_B, STORE_ALUFN, COMPUTE, DISPLAY}
+    
+    // button_conditioner needs to adjust CLK_FREQ because our min delay is 20ms 
+    // 1000 * 20 / 1000 = 20 clk cycles 
+    // if clk_freq remains 10M, then we need to wait 200K clk cycles in simulation, which is 200 seconds (too long)
+    button_conditioner next(.clk(clk), #CLK_FREQ(CLK_FREQ)) // adjust this to 1000 for simulation, 10M for actual FPGA
+    edge_detector next_edge(.clk(clk), #RISE(1), #FALL(0))
+    
+    // The $width function can be used on the enum to get the minimum number of bits to store a value.
+    dff state[$width(States)](#INIT(States.DISPLAY), .clk(clk))
+    
+    // for UI
+    seven_seg_alu seven_seg_alu
+    
+    always {
+        io_led = 3x{{8h0}}
+        
+        next.in = io_button[0]
+        next_edge.in = next.out
+        
+        state.d = state.q 
+        indicator_state.d = indicator_state.q
+        output_alu.d = output_alu.q
+        
+        if(next_edge.out){
+            case (state.q){
+                States.STORE_A: 
+                    dff_a.d = c{io_dip[1], io_dip[0]}
+                    indicator_state.d = b01 // Ready to store B 
+                    state.d = States.STORE_B
+                
+                States.STORE_B:
+                    dff_b.d = c{io_dip[1], io_dip[0]}
+                    indicator_state.d = b10 // Ready to store ALUFN
+                    state.d = States.STORE_ALUFN
+                
+                States.STORE_ALUFN:
+                    dff_alufn.d = io_dip[2][5:0]
+                    indicator_state.d = b11 // To DISPLAY
+                    state.d = States.COMPUTE 
+                
+                States.COMPUTE:
+                    output_alu.d = c{alu.z, alu.v, alu.n, alu.out[15:0]}
+                    state.d = States.DISPLAY
+                
+                States.DISPLAY:
+                    indicator_state.d = b00 // Ready to store A
+                    output_alu.d = 0 // show nothing to avoid confusion
+                    state.d = States.STORE_A
+                
+            }
+        }
+        
+        
+        alu.a = dff_a.q
+        alu.b = dff_b.q
+        alu.alufn_signal = dff_alufn.q
+        
+        io_led[1:0] = {output_alu.q[15:8], output_alu.q[7:0]}
+        io_led[2][2:0] = output_alu.q[18:16]
+        io_led[2][7:6] = indicator_state.q
+        
+        if (io_button[1]){
+            io_led[1:0] = {dff_a.q[15:8], dff_a.q[7:0]}
+        }
+        else if (io_button[2]){
+            io_led[1:0] = {dff_b.q[15:8], dff_b.q[7:0]}
+        }
+        else if (io_button[3]){
+            io_led[0] = dff_alufn.q
+        }
+        
+        seven_seg_alu.char = state.q // get character based on current tester state
+        io_segment = ~seven_seg_alu.segs
+        io_select = 4b1110 // switch on the rightmost 7seg digit
+        
+    }
+}

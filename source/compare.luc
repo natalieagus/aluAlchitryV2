@@ -2,14 +2,14 @@ module compare (
     input z,
     input v,
     input n,
-    input alufnSignal[6],
+    input alufn_signal[6],
     output cmp
   ) {
   
   sig nxorv;
   always {
     nxorv = n ^ v;
-    case (alufnSignal[2:1]) {
+    case (alufn_signal[2:1]) {
       b01: cmp = z;
       b10: cmp = nxorv;
       b11: cmp = z | nxorv;

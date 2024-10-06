@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log MI_alchitryTop.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MI_alchitryTop.tcl
+    with args -log alchitry_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source alchitry_top.tcl
 
 
 ****** Vivado v2023.2 (64-bit)
@@ -10,140 +10,164 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source MI_alchitryTop.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2594.785 ; gain = 29.988 ; free physical = 387 ; free virtual = 10989
-Command: synth_design -top MI_alchitryTop -part xc7a35tftg256-1
+source alchitry_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1870.148 ; gain = 29.992 ; free physical = 212 ; free virtual = 11692
+Command: synth_design -top alchitry_top -part xc7a35tftg256-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 29862
+INFO: [Synth 8-7075] Helper process launched with PID 29758
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3371.391 ; gain = 404.199 ; free physical = 85 ; free virtual = 9724
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2646.789 ; gain = 404.203 ; free physical = 83 ; free virtual = 10591
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'MI_alchitryTop' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_alchitryTop.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_resetConditioner_cd0f1f3b' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_resetConditioner_cd0f1f3b.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_resetConditioner_cd0f1f3b' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_resetConditioner_cd0f1f3b.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_aluManualTester_7146de57' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_aluManualTester_7146de57.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_alu' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_alu.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_adder_782e3138' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_adder_782e3138.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_rca_782e3138' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_rca_782e3138.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_fa' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_fa.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_fa' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_fa.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_rca_782e3138' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_rca_782e3138.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_adder_782e3138' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_adder_782e3138.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_boolean_782e3138' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_boolean_782e3138.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_mux4' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_mux4.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_mux4' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_mux4.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_boolean_782e3138' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_boolean_782e3138.v:10]
-INFO: [Synth 8-6157] synthesizing module 'MI_shifter' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_shifter.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_leftShifter' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_leftShifter.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_xBitLeftShifter_302e7480' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_302e7480.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_mux2' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_mux2.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_mux2' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_mux2.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_xBitLeftShifter_302e7480' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_302e7480.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_xBitLeftShifter_9c52b671' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_9c52b671.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_xBitLeftShifter_9c52b671' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_9c52b671.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_xBitLeftShifter_b895f260' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_b895f260.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_xBitLeftShifter_b895f260' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_b895f260.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_xBitLeftShifter_c13fc91' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_c13fc91.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_xBitLeftShifter_c13fc91' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_c13fc91.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_xBitLeftShifter_4ce8fa1' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_4ce8fa1.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_xBitLeftShifter_4ce8fa1' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_xBitLeftShifter_4ce8fa1.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_leftShifter' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_leftShifter.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_bitReverse_782e3138' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_bitReverse_782e3138.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_bitReverse_782e3138' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_bitReverse_782e3138.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_shifter' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_shifter.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_compare' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_compare.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_compare' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_compare.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_multiplier' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_multiplier.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_multiplier' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_multiplier.v:6]
-INFO: [Synth 8-226] default block is never used [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_alu.v:100]
-INFO: [Synth 8-6155] done synthesizing module 'MI_alu' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_alu.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MI_buttonConditioner_f61aaa29' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_buttonConditioner_f61aaa29.v:12]
-INFO: [Synth 8-6157] synthesizing module 'MI_pipeline_432f9f9a' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_pipeline_432f9f9a.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_pipeline_432f9f9a' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_pipeline_432f9f9a.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_buttonConditioner_f61aaa29' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_buttonConditioner_f61aaa29.v:12]
-INFO: [Synth 8-6157] synthesizing module 'MI_edgeDetector_fe7d1ac7' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_edgeDetector_fe7d1ac7.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'MI_edgeDetector_fe7d1ac7' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_edgeDetector_fe7d1ac7.v:11]
-INFO: [Synth 8-6157] synthesizing module 'MI_sevenSegAlu' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_sevenSegAlu.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MI_sevenSegAlu' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_sevenSegAlu.v:6]
-INFO: [Synth 8-155] case statement is not full and has no default [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_aluManualTester_7146de57.v:87]
-INFO: [Synth 8-6155] done synthesizing module 'MI_aluManualTester_7146de57' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_aluManualTester_7146de57.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'MI_alchitryTop' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/MI_alchitryTop.v:6]
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[7] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[6] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[5] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[4] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[3] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[2] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[1] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[0] driven by constant 0
-WARNING: [Synth 8-7129] Port P_alufnSignal[5] in module MI_compare is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[4] in module MI_compare is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[3] in module MI_compare is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[0] in module MI_compare is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[5] in module MI_shifter is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[4] in module MI_shifter is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[3] in module MI_shifter is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[2] in module MI_shifter is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[5] in module MI_boolean_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[4] in module MI_boolean_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[5] in module MI_adder_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[4] in module MI_adder_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[3] in module MI_adder_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[2] in module MI_adder_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_alufnSignal[1] in module MI_adder_782e3138 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_ioButton[4] in module MI_aluManualTester_7146de57 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_ioDip[23] in module MI_aluManualTester_7146de57 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_ioDip[22] in module MI_aluManualTester_7146de57 is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'alchitry_top' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alchitry_top.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/reset_conditioner.sv:6]
+	Parameter STAGES bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/reset_conditioner.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'alu_manual_tester' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu_manual_tester.sv:6]
+	Parameter CLK_FREQ bound to: 24'b100110001001011010000000 
+INFO: [Synth 8-6157] synthesizing module 'alu' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'adder' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/adder.sv:6]
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6157] synthesizing module 'rca' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/rca.sv:6]
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6157] synthesizing module 'fa' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/fa.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'fa' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/fa.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'rca' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/rca.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/adder.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'boolean' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/boolean.sv:6]
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6157] synthesizing module 'mux4' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/mux4.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'mux4' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/mux4.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'boolean' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/boolean.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'shifter' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/mux2.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/mux2.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'left_shifter' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'x_bit_left_shifter' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+	Parameter SHIFT bound to: 5'b10000 
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'x_bit_left_shifter' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'x_bit_left_shifter__parameterized0' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+	Parameter SHIFT bound to: 4'b1000 
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'x_bit_left_shifter__parameterized0' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'x_bit_left_shifter__parameterized1' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+	Parameter SHIFT bound to: 3'b100 
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'x_bit_left_shifter__parameterized1' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'x_bit_left_shifter__parameterized2' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+	Parameter SHIFT bound to: 2'b10 
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'x_bit_left_shifter__parameterized2' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'x_bit_left_shifter__parameterized3' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+	Parameter SHIFT bound to: 1'b1 
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'x_bit_left_shifter__parameterized3' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/x_bit_left_shifter.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'left_shifter' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/left_shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'bit_reverse' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/bit_reverse.sv:6]
+	Parameter SIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'bit_reverse' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/bit_reverse.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'shifter' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/shifter.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'compare' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/compare.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'compare' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/compare.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/multiplier.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/multiplier.sv:6]
+INFO: [Synth 8-226] default block is never used [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu.sv:116]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/button_conditioner.sv:6]
+	Parameter CLK_FREQ bound to: 24'b100110001001011010000000 
+	Parameter MIN_DELAY bound to: 5'b10100 
+	Parameter NUM_SYNC bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'pipeline' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/pipeline.sv:6]
+	Parameter DEPTH bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'pipeline' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/pipeline.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/button_conditioner.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/edge_detector.sv:6]
+	Parameter RISE bound to: 1'b1 
+	Parameter FALL bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/edge_detector.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'seven_seg_alu' [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/seven_seg_alu.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'seven_seg_alu' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/seven_seg_alu.sv:6]
+INFO: [Synth 8-155] case statement is not full and has no default [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu_manual_tester.sv:104]
+INFO: [Synth 8-6155] done synthesizing module 'alu_manual_tester' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alu_manual_tester.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'alchitry_top' (0#1) [/media/share/Alchitry/alu/build/vivado/alu.srcs/sources_1/imports/source/alchitry_top.sv:6]
+WARNING: [Synth 8-3917] design alchitry_top has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[1] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port alufn_signal[5] in module compare is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[4] in module compare is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[3] in module compare is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[0] in module compare is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[5] in module shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[4] in module shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[3] in module shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[2] in module shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[5] in module boolean is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[4] in module boolean is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[5] in module adder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[4] in module adder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[3] in module adder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[2] in module adder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alufn_signal[1] in module adder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_button[4] in module alu_manual_tester is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_dip[23] in module alu_manual_tester is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_dip[22] in module alu_manual_tester is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3465.309 ; gain = 498.117 ; free physical = 96 ; free virtual = 9626
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2739.773 ; gain = 497.188 ; free physical = 77 ; free virtual = 10472
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3483.316 ; gain = 516.125 ; free physical = 88 ; free virtual = 9619
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2757.793 ; gain = 515.207 ; free physical = 77 ; free virtual = 10471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3483.316 ; gain = 516.125 ; free physical = 88 ; free virtual = 9619
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2757.793 ; gain = 515.207 ; free physical = 77 ; free virtual = 10471
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3484.016 ; gain = 0.066 ; free physical = 88 ; free virtual = 9619
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2758.492 ; gain = 0.066 ; free physical = 73 ; free virtual = 10468
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/media/share/Alchitry/alu/build/constraint/alchitry.xdc]
 Finished Parsing XDC File [/media/share/Alchitry/alu/build/constraint/alchitry.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/share/Alchitry/alu/build/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MI_alchitryTop_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/MI_alchitryTop_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/share/Alchitry/alu/build/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/alchitry_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/alchitry_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/media/share/Alchitry/alu/build/constraint/au_props.xdc]
+Finished Parsing XDC File [/media/share/Alchitry/alu/build/constraint/au_props.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3641.352 ; gain = 0.000 ; free physical = 90 ; free virtual = 9587
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2903.879 ; gain = 0.000 ; free physical = 76 ; free virtual = 10441
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3643.578 ; gain = 0.000 ; free physical = 84 ; free virtual = 9582
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2906.105 ; gain = 0.000 ; free physical = 91 ; free virtual = 10438
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3643.578 ; gain = 676.387 ; free physical = 87 ; free virtual = 9552
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2906.105 ; gain = 663.520 ; free physical = 74 ; free virtual = 10408
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3643.578 ; gain = 676.387 ; free physical = 85 ; free virtual = 9550
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2906.105 ; gain = 663.520 ; free physical = 74 ; free virtual = 10408
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3643.578 ; gain = 676.387 ; free physical = 86 ; free virtual = 9551
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2906.105 ; gain = 663.520 ; free physical = 74 ; free virtual = 10408
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'D_state_q_reg' in module 'MI_aluManualTester_7146de57'
+INFO: [Synth 8-802] inferred FSM for state register 'D_state_q_reg' in module 'alu_manual_tester'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -153,9 +177,9 @@ INFO: [Synth 8-802] inferred FSM for state register 'D_state_q_reg' in module 'M
                  iSTATE1 |                            01000 |                              010
                  iSTATE2 |                            10000 |                              011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'D_state_q_reg' using encoding 'one-hot' in module 'MI_aluManualTester_7146de57'
+INFO: [Synth 8-3354] encoded FSM with state register 'D_state_q_reg' using encoding 'one-hot' in module 'alu_manual_tester'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3643.578 ; gain = 676.387 ; free physical = 90 ; free virtual = 9558
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2906.105 ; gain = 663.520 ; free physical = 80 ; free virtual = 10413
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -202,45 +226,45 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[7] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[6] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[5] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[4] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[3] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[2] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[1] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_led[0] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioLed[21] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioLed[20] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioLed[19] driven by constant 0
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioSeg[7] driven by constant 1
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioSel[3] driven by constant 1
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioSel[2] driven by constant 1
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioSel[1] driven by constant 1
-WARNING: [Synth 8-3917] design MI_alchitryTop has port P_ioSel[0] driven by constant 0
-WARNING: [Synth 8-7129] Port P_ioButton[4] in module MI_alchitryTop is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_ioDip[23] in module MI_alchitryTop is either unconnected or has no load
-WARNING: [Synth 8-7129] Port P_ioDip[22] in module MI_alchitryTop is either unconnected or has no load
+WARNING: [Synth 8-3917] design alchitry_top has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[1] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port led[0] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port io_led[21] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port io_led[20] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port io_led[19] driven by constant 0
+WARNING: [Synth 8-3917] design alchitry_top has port io_segment[7] driven by constant 1
+WARNING: [Synth 8-3917] design alchitry_top has port io_select[3] driven by constant 1
+WARNING: [Synth 8-3917] design alchitry_top has port io_select[2] driven by constant 1
+WARNING: [Synth 8-3917] design alchitry_top has port io_select[1] driven by constant 1
+WARNING: [Synth 8-3917] design alchitry_top has port io_select[0] driven by constant 0
+WARNING: [Synth 8-7129] Port io_button[4] in module alchitry_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_dip[23] in module alchitry_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_dip[22] in module alchitry_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 3643.578 ; gain = 676.387 ; free physical = 88 ; free virtual = 9513
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2906.105 ; gain = 663.520 ; free physical = 88 ; free virtual = 10378
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 3671.262 ; gain = 704.070 ; free physical = 79 ; free virtual = 9418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2933.793 ; gain = 691.207 ; free physical = 79 ; free virtual = 10304
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 3671.555 ; gain = 704.363 ; free physical = 102 ; free virtual = 9390
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2934.086 ; gain = 691.500 ; free physical = 84 ; free virtual = 10301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 3671.758 ; gain = 704.566 ; free physical = 101 ; free virtual = 9389
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2934.289 ; gain = 691.703 ; free physical = 83 ; free virtual = 10299
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -258,37 +282,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3671.902 ; gain = 704.711 ; free physical = 123 ; free virtual = 9411
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.434 ; gain = 691.848 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3671.914 ; gain = 704.723 ; free physical = 123 ; free virtual = 9411
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.445 ; gain = 691.859 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3671.973 ; gain = 704.781 ; free physical = 122 ; free virtual = 9410
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.504 ; gain = 691.918 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3671.984 ; gain = 704.793 ; free physical = 122 ; free virtual = 9410
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.516 ; gain = 691.930 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3672.008 ; gain = 704.816 ; free physical = 122 ; free virtual = 9410
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.539 ; gain = 691.953 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3672.008 ; gain = 704.816 ; free physical = 122 ; free virtual = 9410
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.539 ; gain = 691.953 ; free physical = 86 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -305,42 +329,42 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |     5|
+|2     |CARRY4 |     4|
 |3     |LUT1   |     4|
 |4     |LUT2   |   105|
 |5     |LUT3   |    15|
 |6     |LUT4   |    44|
-|7     |LUT5   |    57|
+|7     |LUT5   |    56|
 |8     |LUT6   |   291|
-|9     |FDRE   |    83|
+|9     |FDRE   |    79|
 |10    |FDSE   |     6|
 |11    |IBUF   |    29|
 |12    |OBUF   |    45|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3672.039 ; gain = 704.848 ; free physical = 122 ; free virtual = 9410
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.570 ; gain = 691.984 ; free physical = 85 ; free virtual = 10307
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 3672.078 ; gain = 544.625 ; free physical = 122 ; free virtual = 9410
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 3672.090 ; gain = 704.887 ; free physical = 121 ; free virtual = 9410
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2934.609 ; gain = 543.711 ; free physical = 85 ; free virtual = 10306
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2934.621 ; gain = 692.027 ; free physical = 85 ; free virtual = 10306
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3672.184 ; gain = 0.000 ; free physical = 114 ; free virtual = 9409
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2934.730 ; gain = 0.004 ; free physical = 91 ; free virtual = 10306
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3705.480 ; gain = 0.000 ; free physical = 569 ; free virtual = 9891
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2967.938 ; gain = 0.000 ; free physical = 562 ; free virtual = 10777
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 3b19cae7
+Synth Design complete | Checksum: 8f3523d9
 INFO: [Common 17-83] Releasing license: Synthesis
 67 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:43 . Memory (MB): peak = 3705.480 ; gain = 1110.430 ; free physical = 564 ; free virtual = 9887
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2336.413; main = 1853.556; forked = 492.236
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5833.418; main = 3671.520; forked = 2164.172
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3705.480 ; gain = 0.000 ; free physical = 561 ; free virtual = 9885
-INFO: [Common 17-1381] The checkpoint '/media/share/Alchitry/alu/build/vivado/alu.runs/synth_1/MI_alchitryTop.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file MI_alchitryTop_utilization_synth.rpt -pb MI_alchitryTop_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 13 01:11:31 2024...
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:41 . Memory (MB): peak = 2967.938 ; gain = 1097.523 ; free physical = 556 ; free virtual = 10772
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2317.719; main = 1838.655; forked = 479.263
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4371.277; main = 2934.047; forked = 1437.676
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2967.938 ; gain = 0.000 ; free physical = 555 ; free virtual = 10771
+INFO: [Common 17-1381] The checkpoint '/media/share/Alchitry/alu/build/vivado/alu.runs/synth_1/alchitry_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file alchitry_top_utilization_synth.rpt -pb alchitry_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct  5 20:13:35 2024...

@@ -1,20 +1,20 @@
 {
     "project": {
-        "type": "V1.0",
+        "type": "V1.2",
         "projectName": "alu",
         "board": "Alchitry Au",
         "sourceFiles": [
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/alchitryTop.luc"
+                    "path": "source/alchitry_top.luc"
                 },
                 "top": true
             },
             {
                 "file": {
                     "type": "Component",
-                    "path": "Conditioning/resetConditioner.luc"
+                    "path": "Conditioning/reset_conditioner.luc"
                 }
             },
             {
@@ -44,7 +44,7 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/bitReverse.luc"
+                    "path": "source/bit_reverse.luc"
                 }
             },
             {
@@ -62,13 +62,13 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/xBitLeftShifter.luc"
+                    "path": "source/x_bit_left_shifter.luc"
                 }
             },
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/leftShifter.luc"
+                    "path": "source/left_shifter.luc"
                 }
             },
             {
@@ -104,19 +104,19 @@
             {
                 "file": {
                     "type": "Component",
-                    "path": "Conditioning/buttonConditioner.luc"
+                    "path": "Conditioning/button_conditioner.luc"
                 }
             },
             {
                 "file": {
                     "type": "Component",
-                    "path": "Pulses/edgeDetector.luc"
+                    "path": "Pulses/edge_detector.luc"
                 }
             },
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/aluManualTester.luc"
+                    "path": "source/alu_manual_tester.luc"
                 }
             },
             {
@@ -134,7 +134,7 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/sevenSegAlu.luc"
+                    "path": "source/seven_seg_alu.luc"
                 }
             }
         ],
@@ -142,15 +142,16 @@
             {
                 "file": {
                     "type": "Component",
-                    "path": "Constraints/alchitry.acf"
+                    "path": "Constraints/io.acf"
                 }
             },
             {
                 "file": {
                     "type": "Component",
-                    "path": "Constraints/io.acf"
+                    "path": "Constraints/alchitry.acf"
                 }
             }
-        ]
+        ],
+        "ipCores": []
     }
 }

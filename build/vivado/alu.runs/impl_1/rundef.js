@@ -30,7 +30,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log MI_alchitryTop.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MI_alchitryTop.tcl -notrace" );
+         "-log alchitry_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source alchitry_top.tcl -notrace" );
 
 
 

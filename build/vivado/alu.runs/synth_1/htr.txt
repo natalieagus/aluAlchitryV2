@@ -7,4 +7,4 @@
 # Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log MI_alchitryTop.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MI_alchitryTop.tcl
+vivado -log alchitry_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source alchitry_top.tcl

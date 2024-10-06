@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Tue Aug 13 01:12:12 2024
+| Date         : Sat Oct  5 20:14:18 2024
 | Host         : debian
 | Design       : design_1
 | Device       : xc7a35t-ftg256-1--
